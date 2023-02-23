@@ -114,13 +114,14 @@ def check_folder_and_delete_if_empty(path):
         os.rmdir(path)
 
 
-try:
-    folder_path = sys.argv[1]
-    p = Path(folder_path)
-    sort_tree(p)
-except IndexError:
-    print("You haven't provided the path")
-except FileNotFoundError:
-    print("No such path")
+if __name__ == "__main__":
+    try:
+        folder_path = sys.argv[1]
+        p = Path(folder_path)
+        sort_tree(p)
+    except IndexError:
+        print("You haven't provided the path")
+    except FileNotFoundError:
+        print("No such path")
 
 
