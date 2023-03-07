@@ -103,10 +103,7 @@ def normalize(file_name):
 
 
 def relocate_file(file, new_name, folder_name):
-    try:
-        file.replace(Path(folder_name) / Path(new_name))
-    except FileExistsError:
-        pass
+    file.replace(Path(folder_name) / Path(new_name))
 
 
 def unpack_archive(archive, file_name, folder_name):
